@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Clone</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #141414;
+            color: white;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #000;
+        }
+        .logo {
+            font-size: 24px;
+            color: #e50914;
+        }
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 20px;
+        }
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+        .hero {
+            text-align: center;
+            padding: 100px 0;
+            background-color: #333;
+        }
+        .movies-list {
+            padding: 20px;
+        }
+        .movies-container {
+            display: flex;
+            gap: 20px;
+            overflow-x: scroll;
+        }
+        .movie-item {
+            width: 200px;
+            text-align: center;
+        }
+        .movie-item img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #000;
+        }
+        .movie-details {
+            text-align: center;
+            padding: 50px 0;
+        }
+        .movie-details img {
+            width: 200px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Netflix Clone</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">TV Shows</a></li>
+                <li><a href="#">Movies</a></li>
+                <li><a href="#">My List</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Welcome to Netflix Clone</h1>
+        <p>Watch your favorite movies and series</p>
+    </section>
+
+    <section class="movies-list">
+        <h2>Trending Now</h2>
+        <div class="movies-container">
+            <div class="movie-item" onclick="showDetails('Movie 1', 'movie1.jpg', 'A great movie!')">
+                <img src="movie1.jpg" alt="Movie 1">
+                <h3>Movie Title 1</h3>
+            </div>
+            <div class="movie-item" onclick="showDetails('Movie 2', 'movie2.jpg', 'Another great movie!')">
+                <img src="movie2.jpg" alt="Movie 2">
+                <h3>Movie Title 2</h3>
+            </div>
+        </div>
+    </section>
+
+    <section class="movie-details" id="movie-details" style="display:none;">
+        <h1 id="movie-title"></h1>
+        <img id="movie-img" src="" alt="Movie Image">
+        <p id="movie-desc"></p>
+        <p>Rating: ★★★★☆</p>
+        <button onclick="simulatePlay()">Play</button>
+    </section>
+
+    <footer>
+        <p>Netflix Clone - Developed for Educational Purposes</p>
+    </footer>
+
+    <script>
+        function showDetails(title, imgSrc, desc) {
+            document.getElementById('movie-title').innerText = title;
+            document.getElementById('movie-img').src = imgSrc;
+            document.getElementById('movie-desc').innerText = desc;
+            document.getElementById('movie-details').style.display = 'block';
+        }
+
+        function simulatePlay() {
+            alert('Simulated video playback!');
+        }
+    </script>
+</body>
+</html>
